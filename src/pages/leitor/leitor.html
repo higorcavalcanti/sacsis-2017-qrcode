@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Registrar Presença</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h4>
+    {{title}}
+  </h4>
+
+  <div *ngIf="!result">
+    Para registrar presença, leia o QR-Code do usuário
+  </div>
+
+  <div *ngIf="result">
+    <p><b>Nome: </b>{{result.name}}</p>
+    <p><b>Email: </b>{{result.email}}</p>
+    <p><b>Matricula: </b>{{result.matricula}}</p>
+    <p><b>Minicurso 1: </b>{{result.infoTurma1?.nome}}</p>
+    <p><b>Minicurso 2: </b>{{result.infoTurma2?.nome}}</p>
+
+    <!--
+    <button ion-button block color="secondary" (click)="pode = !pode">
+      Debug: muda pode
+    </button>
+    -->
+  </div>
+</ion-content>
+
+
+<ion-footer>
+  <ion-navbar color="primary">
+    <ion-title>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button block clear color="light" (click)="lerQr()">
+            Abrir leitor
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button block clear color="light" [disabled]="!pode" (click)="presenca()">
+            Presença
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-navbar>
+</ion-footer>

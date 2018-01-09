@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> Selecionar Palestra </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let p of palestras" (click)="selecionar(p)">
+      {{p.titulo}}
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,5 +1,18 @@
 {
   "name": "presenca",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://10.0.0.11:8765/api/presenca"
+    },
+    {
+      "path": "/api2",
+      "proxyUrl": "http://sacsis.infoalto.com.br/api/presenca/"
+    }
+  ]
 }
